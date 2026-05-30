@@ -1,0 +1,10 @@
+{
+  "hero": {
+    "title": "Building the Future with Code & AI",
+    "subtitle": "I'm a passionate developer and AI enthusiast. I build ethical hacking tools, explore computer science depths, and create innovative solutions.",
+    "image": "/hero-character.png"
+  },
+  "about": {
+    "bio": "I'm a passionate developer and AI enthusiast with a deep love for computer science. My journey began with a curiosity for how things work, which led me to explore the world of ethical hacking and software development. I specialize in building robust web applications and exploring the potential of artificial intelligence to solve real-world problems."
+  }
+}

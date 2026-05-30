@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1763768451066",
+    "year": "2024 - Present",
+    "title": "Independent Security Researcher",
+    "organization": "Freelance",
+    "description": "Developing ethical hacking tools and contributing to open-source security projects.",
+    "skills": [
+      "Python",
+      "Scapy",
+      "Metasploit"
+    ]
+  },
+  {
+    "id": "1763768451074",
+    "year": "2023 - 2024",
+    "title": "AI/ML Projects",
+    "organization": "Personal Projects",
+    "description": "Built multiple machine learning models including a code assistant and neural network implementations.",
+    "skills": [
+      "PyTorch",
+      "TensorFlow",
+      "NLP"
+    ]
+  },
+  {
+    "id": "1763768451083",
+    "year": "2022 - 2023",
+    "title": "Full-Stack Development",
+    "organization": "Various Projects",
+    "description": "Created web applications using modern frameworks with focus on performance.",
+    "skills": [
+      "React",
+      "Next.js",
+      "Node.js"
+    ]
+  }
+]
