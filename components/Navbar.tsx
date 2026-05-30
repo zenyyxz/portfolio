@@ -3,12 +3,14 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Github } from "lucide-react";
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [brandName, setBrandName] = useState("LahiruX");
+    const [repoLink, setRepoLink] = useState("");
+    const [showRepoLink, setShowRepoLink] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -19,15 +21,15 @@ const Navbar = () => {
     }, []);
 
     useEffect(() => {
-        // Fetch brand name from settings
+        // Fetch settings
         fetch("/api/settings")
             .then(res => res.json())
             .then(data => {
-                if (data.brandName) {
-                    setBrandName(data.brandName);
-                }
+                if (data.brandName) setBrandName(data.brandName);
+                if (data.repoLink) setRepoLink(data.repoLink);
+                if (data.showRepoLink !== undefined) setShowRepoLink(data.showRepoLink);
             })
-            .catch(err => console.error("Failed to load brand name:", err));
+            .catch(err => console.error("Failed to load settings:", err));
     }, []);
 
     const navLinks = [
@@ -58,6 +60,19 @@ const Navbar = () => {
                             {link.name}
                         </Link>
                     ))}
+
+                    {showRepoLink && repoLink && (
+                        <a
+                            href={repoLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-400 hover:text-white transition-colors"
+                            aria-label="GitHub Repository"
+                        >
+                            <Github size={22} />
+                        </a>
+                    )}
+
                     <Link
                         href="#contact"
                         className="px-5 py-2 bg-primary hover:bg-primary-dark rounded-lg font-medium text-white transition-all duration-300 hover:shadow-lg hover:shadow-primary/50"
@@ -92,6 +107,19 @@ const Navbar = () => {
                             {link.name}
                         </Link>
                     ))}
+
+                    {showRepoLink && repoLink && (
+                        <a
+                            href={repoLink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-gray-300 hover:text-primary flex items-center gap-2 py-2"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            <Github size={20} />
+                            <span>GitHub Repo</span>
+                        </a>
+                    )}
                 </motion.div>
             )}
         </nav>

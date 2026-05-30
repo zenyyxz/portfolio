@@ -16,6 +16,8 @@ export async function GET() {
                 linkedin: "",
                 twitter: "",
                 telegram: "",
+                repoLink: "",
+                showRepoLink: false,
             });
         }
         const data = fs.readFileSync(settingsPath, "utf-8");

@@ -33,6 +33,8 @@ export default function AdminPage() {
         linkedin: "",
         twitter: "",
         telegram: "",
+        repoLink: "",
+        showRepoLink: false,
     });
 
     // Modal States
@@ -648,6 +650,37 @@ export default function AdminPage() {
                                             />
                                         </div>
                                     ))}
+                                </div>
+
+                                {/* GitHub Repository Link Setting */}
+                                <div className="pt-4 border-t border-slate-700 space-y-4">
+                                    <div className="flex items-center justify-between">
+                                        <div>
+                                            <h3 className="font-bold text-lg">GitHub Repository Button</h3>
+                                            <p className="text-xs text-gray-500">Show a GitHub icon in the navbar linked to your project repo</p>
+                                        </div>
+                                        <label className="relative inline-flex items-center cursor-pointer">
+                                            <input
+                                                type="checkbox"
+                                                checked={settings.showRepoLink}
+                                                onChange={(e) => setSettings({ ...settings, showRepoLink: e.target.checked })}
+                                                className="sr-only peer"
+                                            />
+                                            <div className="w-11 h-6 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                                        </label>
+                                    </div>
+                                    {settings.showRepoLink && (
+                                        <div>
+                                            <label className="block text-sm font-medium mb-2">Repository URL</label>
+                                            <input
+                                                type="url"
+                                                value={settings.repoLink}
+                                                onChange={(e) => setSettings({ ...settings, repoLink: e.target.value })}
+                                                className="w-full px-4 py-3 bg-slate-900 border border-slate-700 rounded-lg focus:border-primary focus:outline-none"
+                                                placeholder="https://github.com/yourusername/your-repo"
+                                            />
+                                        </div>
+                                    )}
                                 </div>
                             </div>
 
