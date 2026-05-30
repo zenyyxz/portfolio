@@ -36,7 +36,7 @@ A professional, responsive portfolio website built with **Next.js 14**, featurin
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/portfolio.git
+   git clone https://github.com/zennyxz/portfolio.git
    cd portfolio
    ```
 
